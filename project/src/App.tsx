@@ -8,7 +8,7 @@ import { apolloClient } from './lib/apollo';
 import LoginPage from './components/LoginPage';
 import ChatSidebar from './components/ChatSidebar';
 import ChatArea from './components/ChatArea';
-import { LogOut, User } from 'lucide-react';
+
 
 const AppContent: React.FC = () => {
   const { isLoading, isAuthenticated } = useAuthenticationStatus();
@@ -50,23 +50,7 @@ const AppContent: React.FC = () => {
     <div className="h-screen flex bg-gray-100">
       {/* Header / User info */}
       <div className="fixed top-0 right-0 z-40 p-4">
-        <div className="flex items-center gap-3 bg-white rounded-lg shadow-sm border border-gray-200 px-4 py-2">
-          <div className="flex items-center gap-2">
-            <div className="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
-              <User className="w-4 h-4 text-blue-600" />
-            </div>
-            <span className="text-sm font-medium text-gray-700 hidden sm:block">
-              {user?.email}
-            </span>
-          </div>
-          <button
-            onClick={handleSignOut}
-            className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors duration-200"
-            title="Sign Out"
-          >
-            <LogOut className="w-4 h-4" />
-          </button>
-        </div>
+       
       </div>
 
       {/* Main content */}
@@ -76,6 +60,7 @@ const AppContent: React.FC = () => {
           onSelectChat={setSelectedChatId}
           onNewChat={() => {}}
           currentUserId={currentUserId} // ✅ Pass user_id
+          handleSignOut={handleSignOut}
         />
         <div className="flex-1 md:ml-0 ml-0">
           <ChatArea
