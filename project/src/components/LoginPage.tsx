@@ -134,7 +134,7 @@ const LoginPage: React.FC = () => {
         return;
       }
       if (password.length < 8) {
-        setToast({ message: 'Password must be at least 9 characters long', type: 'error' });
+        setToast({ message: 'Password must be at least 8 characters long', type: 'error' });
         return;
       }
       await signUpEmailPassword(email, password);
@@ -168,7 +168,7 @@ const LoginPage: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-black flex items-center justify-center p-4 relative overflow-hidden" 
            style={{ 
              minHeight: '100vh', 
-      
+             
              overscrollBehavior: 'none'
            }}>
         {/* Extended background to prevent white showing */}
@@ -203,10 +203,10 @@ const LoginPage: React.FC = () => {
               <div className="absolute -inset-6 bg-gradient-to-tr from-violet-600/10 to-purple-600/10 rounded-full blur-3xl -z-20"></div>
             </div>
             <h1 className="text-5xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent mb-4 tracking-tight">
-              ChatApp
+              AI ChatBot
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-sm mx-auto">
-              {isSignUp ? 'Join our community and start meaningful conversations' : 'Welcome back! Continue where you left off'}
+              {isSignUp ? 'Create your account to chat with our intelligent AI assistant' : 'Welcome back! Continue your conversation with AI'}
             </p>
           </div>
 
